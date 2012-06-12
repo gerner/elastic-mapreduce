@@ -86,7 +86,11 @@ module Commands
       if ( value == nil ) then
         return default_value
       else
-        return value
+        if default_value.kind_of?(Array) && !value.kind_of?(Array)
+          return [value]
+        else
+          return value
+        end
       end
     end
 
@@ -140,7 +144,11 @@ module Commands
       if value == nil then
         value = default_value
       end
-      return value
+      if default_value.kind_of?(Array) && !value.kind_of?(Array)
+        return [value]
+      else
+        return value
+      end
     end
 
     def require(field_symbol, error_msg)
