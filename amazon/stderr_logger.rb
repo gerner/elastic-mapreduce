@@ -12,7 +12,7 @@ module Amazon
 
     def message(level, msg)
       if level[:level] <= @level then
-        @file.puts(level[:string] + " " + msg)
+        @file.puts("#{level[:string]} #{msg}")
       end
     end
 

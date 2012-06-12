@@ -576,8 +576,8 @@ class UUID
         end
       end
       if @@mac_address != nil
-        if @@mac_address.respond_to?(:to_str)
-          @@mac_address = @@mac_address.to_str
+        if @@mac_address.respond_to?(:to_s)
+          @@mac_address = @@mac_address.to_s
         else
           @@mac_address = @@mac_address.to_s
         end
@@ -636,7 +636,7 @@ class UUID
     integer = 0
     size = byte_string.size
     for i in 0..(size - 1)
-      integer += (byte_string[i] << (((size - 1) - i) * 8))
+      integer += (byte_string[i] << (((size - 1) - i) * 8)).to_i
     end
     return integer
   end
