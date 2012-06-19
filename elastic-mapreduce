@@ -2,5 +2,5 @@
 #
 # Copyright 2008-2010 Amazon.com, Inc. or its affiliates.  All Rights Reserved.
 
-$LOAD_PATH.unshift File.dirname(__FILE__)
+$LOAD_PATH.unshift File.dirname(File.readlink(__FILE__))
 require 'elastic-mapreduce-cli'
